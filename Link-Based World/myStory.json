@@ -1,0 +1,156 @@
+{
+    "Title": "True Story",
+    "Credits": "Created by Shawn Kramer",
+    "InitialLocation": "Classroom",
+    "Locations": {
+        "Classroom": {
+            "Body": "The bell has rung for recess. The rest of the class has already rushed out of the classroom to go play at the playground. As much as you would already have joined them, the doctor had recently instructed you to stop by the Nurse's Office to go take a puff from the inhaler this week before running out to play, just in case.",
+            "Choices": [
+                {
+                    "Text": "Talk to the teacher about your visit to the nurse",
+                    "Target": "ClassroomTeacherDialogueEnd",
+                    "RequiredItem": "dialogue3",
+                    "IfMissingShowInstead": "Gotta go talk to the nurse."
+                },
+                {
+                    "Text": "Talk to the teacher about your inhaler",
+                    "Target": "ClassroomTeacherDialogue2",
+                    "RequiredItem": "dialogue1",
+                    "IfMissingShowInstead": "The inhaler is at the Nurse's Office.",
+                    "OneTimeUse": true
+                },
+                {
+                    "Text": "Go to the bungalows",
+                    "Target": "Bungalows"
+                }
+            ]
+        },
+        "ClassroomTeacherDialogueEnd": {
+            "Body": "The teacher is just about to ask you to go use the inhaler anyway when the bell rings, signaling the end of recess. There is a lesson somewhere in this terrible, twisted story that remains unseen."
+        },
+        "ClassroomTeacherDialogue2": {
+            "Body": "You explain the situation to your teacher.",
+            "Choices": [
+                {
+                    "Text": "Get permission to return to nurse",
+                    "Target": "GetDialogue2"
+                }
+            ]
+        },
+        "GetDialogue2": {
+            "Body": "She tells you that she doesn't want to disobey the doctor's orders, and that using the inhaler would only take a quick second. She says you should go back and use the inhaler anyway before you go play.",
+            "Choices": [
+                {
+                    "Text": "Return to main classroom",
+                    "Target": "Classroom"
+                }
+            ],
+            "GetItem": "dialogue2"
+        },
+        "Bungalows": {
+            "Body": "The classrooms are all in bungalows here, lining the asphalt. Ahead is the playground.",
+            "Choices": [
+                {
+                    "Text": "Go to the classroom",
+                    "Target": "Classroom"
+                },
+                {
+                    "Text": "Go to the playground",
+                    "Target": "Playground"
+                }
+            ]
+        },
+        "Playground": {
+            "Body": "The playground is filled with other 4th graders playing on the play structure. Your friends are playing four square, the greatest game of all time, inside the chalked lines. They tempt you to join them, reminding you that the inhaler is more of a formality than a realistic possibility at this point.",
+            "Choices": [
+                {
+                    "Text": "Go play",
+                    "Target": "PlaygroundEnd"
+                },
+                {
+                    "Text": "Go to the bungalows",
+                    "Target": "Bungalows"
+                },
+                {
+                    "Text": "Go to the courtyard",
+                    "Target": "Courtyard"
+                }
+            ]
+        },
+        "PlaygroundEnd": {
+            "Body": "You go play four square with your friends, making the most of your remaining recess time. It's a blast, and although you don't have any asthma attacks, you are scolded by your teacher afterward."
+        },
+        "Courtyard": {
+            "Body": "The courtyard is the center of the school, containing many of the school's offices and important buildings. ",
+            "Choices": [
+                {
+                    "Text": "Go to the playground",
+                    "Target": "Playground"
+                },
+                {
+                    "Text": "Go to the nurse's office",
+                    "Target": "NursesOffice"
+                }
+            ]
+        },
+        "NursesOffice": {
+            "Body": "The nurse's office is small, operated by a single nurse. ",
+            "Choices": [
+                {
+                    "Text": "Talk to the nurse about your inhaler",
+                    "Target": "NurseDialogue1",
+                    "OneTimeUse": true
+                },
+                {
+                    "Text": "Talk to the nurse again about using your inhaler",
+                    "Target": "NurseDialogue2",
+                    "RequiredItem": "dialogue2",
+                    "IfMissingShowInstead": "",
+                    "OneTimeUse": true
+                },
+                {
+                    "Text": "Go to the courtyard",
+                    "Target": "Courtyard"
+                }
+            ]
+        },
+        "NurseDialogue1": {
+            "Body": "You have spoken to this nurse before, and she is familiar with your situation.",
+            "Choices": [
+                {
+                    "Text": "Get information about your inhaler",
+                    "Target": "GetDialogue1"
+                }
+            ]
+        },
+        "GetDialogue1": {
+            "Body": "However, this time, she tells you that you don't need to use your inhaler this time, as you are already more than alright to go play. She askes you to convey this to your teacher, and go enjoy your recess.",
+            "Choices": [
+                {
+                    "Text": "Return to nurse's office",
+                    "Target": "NursesOffice"
+                }
+            ],
+            "GetItem": "dialogue1"
+        },
+        "NurseDialogue2": {
+            "Body": "You explain what your teacher said to the nurse.",
+            "Choices": [
+                {
+                    "Text": "Use your inhaler",
+                    "Target": "GetDialogue3"
+                }
+            ]
+        },
+        "GetDialogue3": {
+            "Body": "The nurse responds laughs and tells you that you are perfectly find to go play, and that there is absolutly no danger in doing so. She tells you to go enjoy your recess, leaving you to wonder if you should let your teacher know.",
+            "Choices": [
+                {
+                    "Text": "Return to nurse's office",
+                    "Target": "NursesOffice"
+                }
+            ],
+            "GetItem": "dialogue3"
+        }
+    }
+}
